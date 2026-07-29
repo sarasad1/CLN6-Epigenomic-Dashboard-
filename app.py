@@ -287,7 +287,7 @@ ax.scatter(
 # Label Top Significant Genes
 # -----------------------------
 
-interesting_genes = [
+important_genes = [
     "CLN6",
     "TFEB",
     "SQSTM1",
@@ -296,21 +296,17 @@ interesting_genes = [
     "CTSD"
 ]
 
-top_genes = volcano_data[
-    volcano_data["Gene Symbol"]
-    .astype(str)
-    .str.upper()
-    .isin([g.upper() for g in interesting_genes])
-]
-
-for _, row in top_genes.iterrows():
-    ax.annotate(
-        row["Gene Symbol"],
-        (row["Difference"], row["minus_log10_p"]),
-        fontsize=8,
-        xytext=(4, 4),
-        textcoords="offset points"
-    )
+for _, row in volcano_data.iterrows():
+    if (
+        row["Gene Symbol"] in important_genes
+        and row["Significant"]
+    ):
+        ax.text(
+            row["Difference"],
+            row["minus_log10_p"],
+            row["Gene Symbol"],
+            fontsize=8
+        )
 # Threshold lines
 ax.axvline(-0.5, color="steelblue", linestyle="--", linewidth=1)
 ax.axvline(0.5, color="steelblue", linestyle="--", linewidth=1)
