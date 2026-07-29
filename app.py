@@ -150,7 +150,7 @@ st.markdown(
 )
 
 st.dataframe(
-    cln6_data.head()
+    cln6_data.head(),
     use_container_width=True,
     hide_index=True
 )
