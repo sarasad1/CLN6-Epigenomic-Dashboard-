@@ -272,7 +272,7 @@ heatmap_data = top_genes[
 # جعل أسماء الجينات هي الفهرس
 heatmap_data.index = top_genes["Gene Symbol"]
 
-fig, ax = plt.subplots(figsize=(8,8))
+fig, ax = plt.subplots(figsize=(10,9))
 
 im = ax.imshow(
     heatmap_data,
