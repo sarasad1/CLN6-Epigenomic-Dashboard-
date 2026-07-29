@@ -335,24 +335,17 @@ if gene_name:
         st.success(f"Found {len(result)} matching gene(s).")
         st.dataframe(result, use_container_width=True, hide_index=True)
 
-# -----------------------------
-# About CLN6
-# -----------------------------
-st.subheader("🧬 About CLN6")
+st.divider()
 
 st.markdown("""
-CLN6 is a rare neurodegenerative disorder belonging to the
-Neuronal Ceroid Lipofuscinoses (NCLs).
+---
+CLN6 Epigenomic Analysis Dashboard
 
-Mutations in the CLN6 gene lead to progressive neuronal dysfunction
-through complex molecular mechanisms.
+Developed by Sara Saad
 
-As research continues, understanding this disease requires connecting
-multiple biological pathways rather than focusing on a single mechanism.
+Bachelor of Chemistry | Bioinformatics Enthusiast
 
-This dashboard provides an interactive way to explore gene expression
-changes and compare wild-type and CLN6 mutant samples using a
-publicly available processed microarray dataset.
+Data Source: NCBI Gene Expression Omnibus (GEO)
+
+Built using Python • Streamlit • Pandas • Matplotlib
 """)
-
-st.divider()
