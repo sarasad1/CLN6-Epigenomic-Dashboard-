@@ -210,6 +210,27 @@ ax.scatter(
     s=25,
     label="Significant"
 )
+# Label biologically relevant genes (if significant)
+important_genes = [
+    "CLN6",
+    "TFEB",
+    "SQSTM1",
+    "ATG5",
+    "LAMP1",
+    "CTSD"
+]
+
+for _, row in volcano_data.iterrows():
+    if (
+        row["Gene Symbol"] in important_genes
+        and row["Significant"]
+    ):
+        ax.text(
+            row["Difference"],
+            row["minus_log10_p"],
+            row["Gene Symbol"],
+            fontsize=8
+        )
 
 # خطوط مرجعية
 ax.axvline(-0.5, linestyle="--", color="steelblue")
@@ -263,56 +284,6 @@ st.dataframe(
 )
 
 st.divider()
-# -----------------------------
-# Label Top Significant Genes
-# -----------------------------
-
-important_genes = [
-    "CLN6",
-    "TFEB",
-    "SQSTM1",
-    "ATG5",
-    "LAMP1",
-    "CTSD"
-]
-
-for _, row in volcano_data.iterrows():
-    if (
-        row["Gene Symbol"] in important_genes
-        and row["Significant"]
-    ):
-        ax.text(
-            row["Difference"],
-            row["minus_log10_p"],
-            row["Gene Symbol"],
-            fontsize=8
-        )
-# Threshold lines
-ax.axvline(-0.5, color="steelblue", linestyle="--", linewidth=1)
-ax.axvline(0.5, color="steelblue", linestyle="--", linewidth=1)
-ax.axhline(-np.log10(0.05), color="darkgreen", linestyle="--", linewidth=1)
-
-# Labels
-ax.set_title(
-    "Volcano Plot of Differential Gene Expression",
-    fontsize=14,
-    fontweight="bold"
-)
-
-ax.set_xlabel("Mean Expression Difference (Mut - WT)")
-ax.set_ylabel("-log10(P-value)")
-
-# Clean appearance
-ax.spines["top"].set_visible(False)
-ax.spines["right"].set_visible(False)
-
-ax.legend(frameon=False)
-
-plt.tight_layout()
-
-st.pyplot(fig)
-
-
 # -----------------------------
 # Gene Search
 # -----------------------------
