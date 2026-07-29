@@ -283,7 +283,42 @@ ax.scatter(
 # -----------------------------
 # Volcano Plot Styling
 # -----------------------------
+# -----------------------------
+# Genes of Biological Interest
+# -----------------------------
+st.header("🧬 Genes of Biological Interest")
 
+st.markdown("""
+The following genes were selected based on their biological relevance
+to CLN6 disease, lysosomal function, and autophagy pathways.
+""")
+
+gene_info = pd.DataFrame({
+    "Gene": [
+        "CLN6",
+        "TFEB",
+        "SQSTM1",
+        "LAMP1",
+        "CTSD",
+        "ATG5"
+    ],
+    "Biological Role": [
+        "Disease-causing gene",
+        "Master regulator of lysosomal biogenesis",
+        "Autophagy receptor",
+        "Lysosomal membrane protein",
+        "Lysosomal protease",
+        "Autophagy-related protein"
+    ]
+})
+
+st.dataframe(
+    gene_info,
+    use_container_width=True,
+    hide_index=True
+)
+
+st.divider()
 # -----------------------------
 # Genes of Biological Interest
 # -----------------------------
