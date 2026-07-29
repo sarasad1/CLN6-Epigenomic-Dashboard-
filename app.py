@@ -71,6 +71,34 @@ with col3:
 st.divider()
 
 # -----------------------------
+# Dataset Information
+# -----------------------------
+
+st.subheader("📂 Dataset Information")
+
+col1, col2 = st.columns(2)
+
+with col1:
+    st.info("""
+Source
+
+NCBI Gene Expression Omnibus (GEO)
+
+Processed Microarray Dataset
+""")
+
+with col2:
+    st.info("""
+Study Design
+
+3 Wild Type (WT)
+
+3 CLN6 Mutant
+""")
+
+st.divider()
+
+# -----------------------------
 # Sidebar
 # -----------------------------
 st.sidebar.title("🧬 Project Information")
