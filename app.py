@@ -287,9 +287,21 @@ ax.scatter(
 # Label Top Significant Genes
 # -----------------------------
 
+interesting_genes = [
+    "CLN6",
+    "TFEB",
+    "SQSTM1",
+    "ATG5",
+    "LAMP1",
+    "CTSD"
+]
+
 top_genes = volcano_data[
-    volcano_data["Significant"]
-].nlargest(10, "minus_log10_p")
+    volcano_data["Gene Symbol"]
+    .astype(str)
+    .str.upper()
+    .isin([g.upper() for g in interesting_genes])
+]
 
 for _, row in top_genes.iterrows():
     ax.annotate(
