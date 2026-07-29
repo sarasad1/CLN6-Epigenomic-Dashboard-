@@ -252,6 +252,26 @@ st.pyplot(fig)
 # Horizontal Divider
 # -----------------------------
 st.divider()
+
+# -----------------------------
+# Heatmap
+# -----------------------------
+st.header("🔥 Heatmap of Top Differentially Expressed Genes")
+# اختيار أهم 30 جين بناءً على قيمة P-value
+top_genes = (
+    cln6_data
+    .sort_values("P_value")
+    .head(30)
+)
+
+# اختيار أعمدة العينات
+heatmap_data = top_genes[
+    ["WT1", "WT2", "WT3", "Mut1", "Mut2", "Mut3"]
+]
+
+# جعل أسماء الجينات هي الفهرس
+heatmap_data.index = top_genes["Gene Symbol"]
+
 # -----------------------------
 # Genes of Biological Interest
 # -----------------------------
