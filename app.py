@@ -272,6 +272,37 @@ heatmap_data = top_genes[
 # جعل أسماء الجينات هي الفهرس
 heatmap_data.index = top_genes["Gene Symbol"]
 
+fig, ax = plt.subplots(figsize=(8,8))
+
+im = ax.imshow(
+    heatmap_data,
+    aspect="auto",
+    cmap="coolwarm"
+)
+
+# أسماء العينات
+ax.set_xticks(range(len(heatmap_data.columns)))
+ax.set_xticklabels(heatmap_data.columns, rotation=45)
+
+# أسماء الجينات
+ax.set_yticks(range(len(heatmap_data.index)))
+ax.set_yticklabels(heatmap_data.index, fontsize=8)
+
+# عنوان
+ax.set_title(
+    "Top 30 Differentially Expressed Genes",
+    fontsize=14,
+    fontweight="bold"
+)
+
+# Colorbar
+cbar = plt.colorbar(im)
+cbar.set_label("Expression Level")
+
+plt.tight_layout()
+
+st.pyplot(fig)
+
 # -----------------------------
 # Genes of Biological Interest
 # -----------------------------
