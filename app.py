@@ -305,6 +305,9 @@ st.pyplot(fig)
 
 st.divider()
 
+# -----------------------------
+# Key Findings
+# -----------------------------
 st.header("📝 Key Findings")
 
 st.markdown("""
@@ -318,6 +321,7 @@ st.markdown("""
 
 - These observations provide an exploratory overview and may support future functional investigations of CLN6 disease mechanisms.
 """)
+st.divider()
 # -----------------------------
 # Genes of Biological Interest
 # -----------------------------
