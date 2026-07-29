@@ -323,6 +323,21 @@ st.markdown("""
 """)
 st.divider()
 # -----------------------------
+# Study limitations
+# -----------------------------
+st.header("⚠️ Study Limitations")
+
+st.markdown("""
+- The analysis is based on a publicly available processed microarray dataset.
+
+- Differential expression results are exploratory and should not be interpreted as experimental validation.
+
+- Biological conclusions require further laboratory validation using independent experiments.
+
+- Sample size is limited (3 WT vs 3 Mut), which may affect statistical power.
+""")
+st.divider()
+# -----------------------------
 # Genes of Biological Interest
 # -----------------------------
 st.header("🧬 Genes of Biological Interest")
