@@ -58,6 +58,8 @@ with col2:
 
 with col3:
     st.write(f"Genes Analysed: {len(cln6_data):,}")
+  
+st.divider()
 
 # -----------------------------
 # Sidebar
@@ -90,6 +92,7 @@ st.markdown(
 
 st.write(cln6_data.head())
 
+st.divider()
 # -----------------------------
 # Quick Statistics
 # -----------------------------
@@ -107,8 +110,8 @@ with col2:
 with col3:
     avg_difference = cln6_data["Difference"].abs().mean()
     st.metric("Average |Difference|", f"{avg_difference:.3f}")
-
-    # -----------------------------
+st.divider()
+# -----------------------------
 # Volcano Plot
 # -----------------------------
 import numpy as np
