@@ -51,13 +51,22 @@ st.header("📌 Project Summary")
 col1, col2, col3 = st.columns(3)
 
 with col1:
-    st.write("Samples: 6")
+    st.metric(
+        label="🧪 Samples",
+        value="6"
+    )
 
 with col2:
-    st.write("Experimental Groups: 3 WT | 3 Mut")
+    st.metric(
+        label="👥 Experimental Groups",
+        value="3 WT | 3 Mut"
+    )
 
 with col3:
-    st.write(f"Genes Analysed: {len(cln6_data):,}")
+    st.metric(
+        label="🧬 Genes Analysed",
+        value=f"{len(cln6_data):,}"
+    )
   
 st.divider()
 
