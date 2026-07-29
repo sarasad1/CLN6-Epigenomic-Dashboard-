@@ -283,7 +283,22 @@ ax.scatter(
 # -----------------------------
 # Volcano Plot Styling
 # -----------------------------
+# -----------------------------
+# Label Top Significant Genes
+# -----------------------------
 
+top_genes = volcano_data[
+    volcano_data["Significant"]
+].nlargest(10, "minus_log10_p")
+
+for _, row in top_genes.iterrows():
+    ax.annotate(
+        row["Gene Symbol"],
+        (row["Difference"], row["minus_log10_p"]),
+        fontsize=8,
+        xytext=(4, 4),
+        textcoords="offset points"
+    )
 # Threshold lines
 ax.axvline(-0.5, color="steelblue", linestyle="--", linewidth=1)
 ax.axvline(0.5, color="steelblue", linestyle="--", linewidth=1)
