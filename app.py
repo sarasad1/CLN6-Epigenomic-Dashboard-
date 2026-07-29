@@ -454,7 +454,29 @@ if gene_name:
     else:
         st.success(f"Found {len(result)} matching gene(s).")
         st.dataframe(result, use_container_width=True, hide_index=True)
+    st.divider()
+# -----------------------------
+# Biological Interpretation
+# -----------------------------
+st.header("📝 Biological Interpretation")
 
+st.markdown("""
+The differential expression analysis identified a subset of genes with
+significant expression changes between wild-type and CLN6 mutant samples.
+
+Although the majority of genes exhibited relatively small expression
+differences, several genes exceeded the predefined statistical thresholds,
+suggesting potential biological relevance.
+
+Genes associated with lysosomal function and autophagy were highlighted
+to facilitate biological interpretation and generate hypotheses for
+future experimental validation.
+
+These results should be considered exploratory and provide a foundation
+for future functional studies rather than definitive biological conclusions.
+""")
+
+st.divider()
 
 st.markdown("""
 ---
