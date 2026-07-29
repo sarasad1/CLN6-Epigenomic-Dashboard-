@@ -140,7 +140,7 @@ Source
 
 NCBI Gene Expression Omnibus (GEO)
 
-Processed Microarray Dataset
+Publicly available processed microarray dataset downloaded from NCBI GEO.
 """)
 
 with col2:
@@ -324,7 +324,7 @@ ax.set_yticklabels(heatmap_data.index, fontsize=8)
 
 # عنوان
 ax.set_title(
-    "Top 30 Differentially Expressed Genes",
+    "Top 30 Most Significant Genes",
     fontsize=14,
     fontweight="bold"
 )
@@ -503,7 +503,7 @@ st.markdown("""
 ---
 CLN6 Epigenomic Analysis Dashboard
 
-Developed by Sara Saad
+Developed by Sara Saad AlJuhani
 
 Bachelor of Chemistry | Bioinformatics Enthusiast
 
