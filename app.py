@@ -149,7 +149,11 @@ st.markdown(
     "Browse the processed CLN6 gene expression dataset used in this project."
 )
 
-st.write(cln6_data.head())
+st.dataframe(
+    cln6_data.head()
+    use_container_width=True,
+    hide_index=True
+)
 
 st.divider()
 # -----------------------------
@@ -242,7 +246,7 @@ ax.set_ylabel("-log10(P-value)")
 ax.set_title("Volcano Plot of Differential Gene Expression")
 
 ax.legend()
-
+plt.tight_layout()
 st.pyplot(fig)
 # -----------------------------
 # Horizontal Divider
@@ -287,7 +291,7 @@ st.divider()
 # -----------------------------
 # Gene Search
 # -----------------------------
-st.header("🧬 Gene Search")
+st.header("🔍 Gene Search")
 
 gene_name = st.text_input(
     "Enter Gene Symbol",
