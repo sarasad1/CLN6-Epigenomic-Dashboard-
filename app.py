@@ -476,7 +476,6 @@ These results should be considered exploratory and provide a foundation
 for future functional studies rather than definitive biological conclusions.
 """)
 
-st.divider()
 
 st.markdown("""
 ---
