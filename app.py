@@ -293,8 +293,19 @@ st.divider()
 # -----------------------------
 st.header("🔍 Gene Search")
 
+gene_list = sorted(
+    cln6_data["Gene Symbol"]
+    .dropna()
+    .unique()
+)
+
+selected_gene = st.selectbox(
+    "Select a gene",
+    [""] + gene_list
+)
+
 gene_name = st.text_input(
-    "Enter Gene Symbol",
+    "Or type a Gene Symbol",
     placeholder="Example: TFEB"
 )
 
