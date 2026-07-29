@@ -303,6 +303,21 @@ plt.tight_layout()
 
 st.pyplot(fig)
 
+st.divider()
+
+st.header("📝 Key Findings")
+
+st.markdown("""
+- A subset of genes showed significant differential expression between WT and CLN6 mutant samples.
+
+- The volcano plot revealed multiple significantly dysregulated genes using the selected statistical thresholds.
+
+- Heatmap visualization demonstrated distinct expression patterns across biological replicates.
+
+- Several genes associated with lysosomal function and autophagy were highlighted for biological interpretation.
+
+- These observations provide an exploratory overview and may support future functional investigations of CLN6 disease mechanisms.
+""")
 # -----------------------------
 # Genes of Biological Interest
 # -----------------------------
