@@ -230,36 +230,8 @@ st.pyplot(fig)
 st.divider()
 
 # -----------------------------
-# Data Exploration
-# -----------------------------
-st.header("🔍 Data Exploration")
-
-st.markdown("""
-Explore the processed gene expression dataset and visualize
-the differential expression results.
-""")
-# -----------------------------
 # Prepare Volcano Plot Data
 # -----------------------------
-import numpy as np
-
-volcano_data = cln6_data.copy()
-
-# Calculate -log10(P-value)
-volcano_data["minus_log10_p"] = -np.log10(
-    volcano_data["P_value"].clip(lower=1e-300)
-)
-
-# Define significant genes
-volcano_data["Significant"] = (
-    (volcano_data["P_value"] < 0.05) &
-    (volcano_data["Difference"].abs() > 0.5)
-)
-
- # -----------------------------
-# Volcano Plot Figure
-# -----------------------------
-fig, ax = plt.subplots(figsize=(9,7))
 
 # Non-significant genes
 ax.scatter(
@@ -291,42 +263,6 @@ st.header("🧬 Genes of Biological Interest")
 st.markdown("""
 The following genes were selected based on their biological relevance
 to CLN6 disease, lysosomal function, and autophagy pathways.
-""")
-
-gene_info = pd.DataFrame({
-    "Gene": [
-        "CLN6",
-        "TFEB",
-        "SQSTM1",
-        "LAMP1",
-        "CTSD",
-        "ATG5"
-    ],
-    "Biological Role": [
-        "Disease-causing gene",
-        "Master regulator of lysosomal biogenesis",
-        "Autophagy receptor",
-        "Lysosomal membrane protein",
-        "Lysosomal protease",
-        "Autophagy-related protein"
-    ]
-})
-
-st.dataframe(
-    gene_info,
-    use_container_width=True,
-    hide_index=True
-)
-
-st.divider()
-# -----------------------------
-# Genes of Biological Interest
-# -----------------------------
-st.header("🧬 Genes of Biological Interest")
-
-st.markdown("""
-These genes were selected based on their known biological relevance to
-lysosomal function, autophagy, and CLN6 disease mechanisms.
 """)
 
 gene_info = pd.DataFrame({
