@@ -93,6 +93,40 @@ with col3:
 st.divider()
 
 # -----------------------------
+# Dashboard Summary
+# -----------------------------
+
+st.subheader("📋 Dashboard Summary")
+
+summary_df = pd.DataFrame({
+    "Item": [
+        "Dataset Source",
+        "Platform",
+        "Samples",
+        "Experimental Groups",
+        "Total Genes",
+        "P-value Threshold",
+        "Difference Threshold"
+    ],
+    "Value": [
+        "NCBI GEO",
+        "Microarray",
+        "6",
+        "3 WT | 3 Mut",
+        f"{len(cln6_data):,}",
+        "< 0.05",
+        "|Difference| > 0.5"
+    ]
+})
+
+st.dataframe(
+    summary_df,
+    use_container_width=True,
+    hide_index=True
+)
+
+st.divider()
+# -----------------------------
 # Dataset Information
 # -----------------------------
 
