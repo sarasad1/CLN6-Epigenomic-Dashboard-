@@ -2,7 +2,7 @@
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
-
+import numpy as np
 # -----------------------------
 # Page Configuration
 # -----------------------------
@@ -173,7 +173,6 @@ st.divider()
 # -----------------------------
 # Volcano Plot
 # -----------------------------
-import numpy as np
 
 st.header("🌋 Volcano Plot")
 
@@ -228,33 +227,6 @@ st.pyplot(fig)
 # Horizontal Divider
 # -----------------------------
 st.divider()
-
-# -----------------------------
-# Prepare Volcano Plot Data
-# -----------------------------
-
-# Non-significant genes
-ax.scatter(
-    volcano_data.loc[~volcano_data["Significant"], "Difference"],
-    volcano_data.loc[~volcano_data["Significant"], "minus_log10_p"],
-    color="lightgray",
-    alpha=0.6,
-    s=18,
-    label="Not Significant"
-)
-
-# Significant genes
-ax.scatter(
-    volcano_data.loc[volcano_data["Significant"], "Difference"],
-    volcano_data.loc[volcano_data["Significant"], "minus_log10_p"],
-    color="crimson",
-    alpha=0.85,
-    s=22,
-    label="Significant"
-)
-# -----------------------------
-# Volcano Plot Styling
-# -----------------------------
 # -----------------------------
 # Genes of Biological Interest
 # -----------------------------
