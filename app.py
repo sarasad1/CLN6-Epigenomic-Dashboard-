@@ -476,6 +476,28 @@ These results should be considered exploratory and provide a foundation
 for future functional studies rather than definitive biological conclusions.
 """)
 
+# -----------------------------
+# Future Work
+# -----------------------------
+st.header("🚀 Future Work")
+
+st.markdown("""
+Although this dashboard provides an overview of differential gene
+expression associated with CLN6 mutation, several directions may further
+expand this work.
+
+Future improvements may include:
+
+- Integration of RNA-seq datasets
+- Functional enrichment analysis (GO / KEGG)
+- Protein-protein interaction network analysis
+- Interactive pathway visualization
+- Cross-study comparison using multiple GEO datasets
+- Clinical data integration for translational research
+""")
+
+st.divider()
+
 
 st.markdown("""
 ---
