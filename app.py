@@ -19,7 +19,19 @@ st.set_page_config(
 st.title("🧬 CLN6 Epigenomic Analysis Dashboard")
 
 st.markdown("""
-...
+This interactive dashboard explores differential gene expression
+associated with CLN6 mutation using a publicly available processed
+microarray dataset from the NCBI Gene Expression Omnibus (GEO).
+
+The dashboard provides:
+
+- 📊 Dataset overview
+- 🌋 Volcano Plot for differential expression
+- 🔍 Gene-level exploration
+- 📈 Summary statistics
+
+Purpose: Demonstrate bioinformatics data exploration and visualization
+using Python and Streamlit.
 """)
 
 # -----------------------------
