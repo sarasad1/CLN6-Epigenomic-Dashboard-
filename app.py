@@ -42,6 +42,28 @@ try:
 except FileNotFoundError:
     st.error("Dataset not found. Please upload CLN6_dashboard_data.csv")
     st.stop()
+    
+# -----------------------------
+# About CLN6
+# -----------------------------
+st.subheader("🧬 About CLN6")
+
+st.markdown("""
+CLN6 is a rare neurodegenerative disorder belonging to the
+Neuronal Ceroid Lipofuscinoses (NCLs).
+
+Mutations in the CLN6 gene lead to progressive neuronal dysfunction
+through complex molecular mechanisms.
+
+As research continues, understanding this disease requires connecting
+multiple biological pathways rather than focusing on a single mechanism.
+
+This dashboard provides an interactive way to explore gene expression
+changes and compare wild-type and CLN6 mutant samples using a
+publicly available processed microarray dataset.
+""")
+
+st.divider()
 
 # -----------------------------
 # Project Summary
