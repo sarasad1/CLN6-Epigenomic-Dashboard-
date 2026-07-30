@@ -496,7 +496,6 @@ Future improvements may include:
 - Clinical data integration for translational research
 """)
 
-st.divider()
 
 
 st.markdown("""
