@@ -467,7 +467,7 @@ if gene_name:
     else:
         st.success(f"Found {len(result)} matching gene(s).")
         st.dataframe(result, use_container_width=True, hide_index=True)
-    st.divider()
+st.divider()
 # -----------------------------
 # Biological Interpretation
 # -----------------------------
@@ -488,7 +488,7 @@ future experimental validation.
 These results should be considered exploratory and provide a foundation
 for future functional studies rather than definitive biological conclusions.
 """)
-
+st.divider()
 # -----------------------------
 # Future Work
 # -----------------------------
@@ -509,7 +509,7 @@ Future improvements may include:
 - Clinical data integration for translational research
 """)
 
-
+st.divider()
 
 st.info("""
 📖 Study Reference
