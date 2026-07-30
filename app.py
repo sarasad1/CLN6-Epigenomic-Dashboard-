@@ -7,7 +7,7 @@ import numpy as np
 # Page Configuration
 # -----------------------------
 st.set_page_config(
-    page_title="CLN6 Epigenomic Analysis Dashboard",
+    page_title="CLN6 Gene Expression Analysis Dashboard",
     page_icon="🧬",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -160,7 +160,7 @@ st.divider()
 st.sidebar.title("🧬 Project Information")
 
 st.sidebar.markdown("""
-### CLN6 Epigenomic Analysis
+### CLN6 Gene Expression Analysis
 
 Disease: Neuronal Ceroid Lipofuscinosis Type 6 (CLN6)
 
