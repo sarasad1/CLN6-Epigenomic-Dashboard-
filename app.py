@@ -210,10 +210,9 @@ with col3:
     avg_difference = cln6_data["Difference"].abs().mean()
     st.metric("Average |Difference|", f"{avg_difference:.3f}")
 st.divider()
+
 Genes were classified as significant using:
-
 • P-value < 0.05
-
 • |Difference| > 0.5
 # -----------------------------
 # Volcano Plot
