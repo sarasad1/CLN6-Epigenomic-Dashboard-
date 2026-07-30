@@ -173,8 +173,7 @@ Samples: 3 Wild Type (WT) + 3 Mutant (Mut)
 Objective:
 Explore gene expression changes associated with CLN6 mutation and identify genes potentially involved in early disease mechanisms.
 """)
-Study Reference
-Distinct Early Molecular Responses to Mutations Causing vLINCL and JNCL Presage ATP Synthase Subunit c Accumulation in Cerebellar Cells
+
 
 # -----------------------------
 # Dataset Preview
@@ -510,6 +509,15 @@ Dashboard Version
 Version 1.0
 
 July 2026
+
+st.info("""
+📖 Study Reference
+
+Distinct Early Molecular Responses to Mutations Causing vLINCL and JNCL Presage ATP Synthase Subunit c Accumulation in Cerebellar Cells
+
+Processed microarray gene expression dataset obtained from NCBI GEO.
+""")
+
 
 st.markdown("""
 ---
