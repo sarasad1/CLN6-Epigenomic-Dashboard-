@@ -16,7 +16,7 @@ st.set_page_config(
 # -----------------------------
 # Dashboard Title
 # -----------------------------
-st.title("🧬 CLN6 Epigenomic Analysis Dashboard")
+st.title("🧬 CLN6 Gene Expression Analysis Dashboardd")
 
 st.markdown("""
 This interactive dashboard explores differential gene expression
@@ -140,7 +140,7 @@ Source
 
 NCBI Gene Expression Omnibus (GEO)
 
-Publicly available processed microarray dataset downloaded from NCBI GEO.
+Processed Affymetrix Mouse Genome 430 2.0 Microarray Dataset
 """)
 
 with col2:
@@ -173,6 +173,8 @@ Samples: 3 Wild Type (WT) + 3 Mutant (Mut)
 Objective:
 Explore gene expression changes associated with CLN6 mutation and identify genes potentially involved in early disease mechanisms.
 """)
+Study Reference
+Distinct Early Molecular Responses to Mutations Causing vLINCL and JNCL Presage ATP Synthase Subunit c Accumulation in Cerebellar Cells
 
 # -----------------------------
 # Dataset Preview
@@ -208,6 +210,11 @@ with col3:
     avg_difference = cln6_data["Difference"].abs().mean()
     st.metric("Average |Difference|", f"{avg_difference:.3f}")
 st.divider()
+Genes were classified as significant using:
+
+• P-value < 0.05
+
+• |Difference| > 0.5
 # -----------------------------
 # Volcano Plot
 # -----------------------------
@@ -324,7 +331,7 @@ ax.set_yticklabels(heatmap_data.index, fontsize=8)
 
 # عنوان
 ax.set_title(
-    "Top 30 Most Significant Genes",
+    "Top 30 Differentially Expressed Genes Ranked by P-value",
     fontsize=14,
     fontweight="bold"
 )
@@ -496,11 +503,15 @@ Future improvements may include:
 - Clinical data integration for translational research
 """)
 
+Dashboard Version
 
+Version 1.0
+
+July 2026
 
 st.markdown("""
 ---
-CLN6 Epigenomic Analysis Dashboard
+CLN6 Gene Expression Analysis Dashboard
 
 Developed by Sara Saad AlJuhani
 
