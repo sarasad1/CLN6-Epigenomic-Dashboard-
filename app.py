@@ -16,7 +16,7 @@ st.set_page_config(
 # -----------------------------
 # Dashboard Title
 # -----------------------------
-st.title("🧬 CLN6 Gene Expression Analysis Dashboardd")
+st.title("🧬 CLN6 Gene Expression Analysis Dashboard")
 
 st.markdown("""
 This interactive dashboard explores differential gene expression
@@ -49,7 +49,7 @@ except FileNotFoundError:
 st.subheader("🧬 About CLN6")
 
 st.markdown("""
-CLN6 is a rare neurodegenerative disorder belonging to the
+CLN6 disease is a rare neurodegenerative disorder belonging to the
 Neuronal Ceroid Lipofuscinoses (NCLs).
 
 Mutations in the CLN6 gene lead to progressive neuronal dysfunction
@@ -140,7 +140,7 @@ Source
 
 NCBI Gene Expression Omnibus (GEO)
 
-Processed Affymetrix Mouse Genome 430 2.0 Microarray Dataset
+Processed Affymetrix Mouse Genome 430 2.0 Microarray Dataset (NCBI GEO)
 """)
 
 with col2:
@@ -149,7 +149,7 @@ Study Design
 
 3 Wild Type (WT)
 
-3 CLN6 Mutant
+3 CLN6 Mutant (Mut)
 """)
 
 st.divider()
@@ -290,6 +290,11 @@ ax.set_title("Volcano Plot of Differential Gene Expression")
 ax.legend()
 plt.tight_layout()
 st.pyplot(fig)
+
+st.caption("""
+Genes highlighted in red satisfy the predefined exploratory thresholds
+(P-value < 0.05 and |Difference| > 0.5).
+""")
 # -----------------------------
 # Horizontal Divider
 # -----------------------------
