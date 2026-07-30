@@ -504,11 +504,7 @@ Future improvements may include:
 - Clinical data integration for translational research
 """)
 
-Dashboard Version
 
-Version 1.0
-
-July 2026
 
 st.info("""
 📖 Study Reference
