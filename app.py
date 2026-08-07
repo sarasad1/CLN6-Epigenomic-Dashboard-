@@ -384,29 +384,7 @@ st.markdown("""
 
 - Sample size is limited (3 WT vs 3 Mut), which may affect statistical power.
 """)
-st.divider()
 
-st.header("📈 Gene Expression Distribution")
-
-st.markdown("""
-This histogram shows the distribution of expression differences
-across all analysed genes.
-""")
-
-fig, ax = plt.subplots(figsize=(8,4))
-
-ax.hist(
-    cln6_data["Difference"],
-    bins=50,
-    color="steelblue",
-    edgecolor="black"
-)
-
-ax.set_xlabel("Expression Difference")
-ax.set_ylabel("Number of Genes")
-ax.set_title("Distribution of Gene Expression Differences")
-
-st.pyplot(fig)
 st.divider()
 # -----------------------------
 # Genes of Biological Interest
