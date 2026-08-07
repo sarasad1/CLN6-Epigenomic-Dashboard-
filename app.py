@@ -93,10 +93,10 @@ with col3:
 st.divider()
 
 # -----------------------------
-# Dashboard Summary
+# Dashboard Components
 # -----------------------------
 
-st.subheader("📋 Dashboard Summary")
+st.subheader("📋 Dashboard Components")
 
 summary_df = pd.DataFrame({
     "Item": [
@@ -140,7 +140,7 @@ Source
 
 NCBI Gene Expression Omnibus (GEO)
 
-Processed Affymetrix Mouse Genome 430 2.0 Microarray Dataset (NCBI GEO)
+Processed Affymetrix Mouse Genome 430 2.0 microarray dataset downloaded from NCBI GEO.
 """)
 
 with col2:
@@ -207,7 +207,7 @@ with col2:
 
 with col3:
     avg_difference = cln6_data["Difference"].abs().mean()
-    st.metric("Average |Difference|", f"{avg_difference:.3f}")
+    st.metric("Average Expression Difference", f"{avg_difference:.3f}")
 st.divider()
 
 st.markdown("""
@@ -215,6 +215,7 @@ Selection criteria:
 
 - P-value < 0.05
 - |Difference| > 0.5
+Genes satisfying both criteria were considered for downstream exploration.
 """)
 # -----------------------------
 # Volcano Plot
