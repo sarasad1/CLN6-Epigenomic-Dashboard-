@@ -215,7 +215,7 @@ Selection criteria:
 
 - P-value < 0.05
 - |Difference| > 0.5
-Genes meeting both thresholds were selected for downstream analysis.
+- Genes meeting both thresholds were selected for downstream analysis.
 """)
 # -----------------------------
 # Volcano Plot
