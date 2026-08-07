@@ -106,7 +106,7 @@ summary_df = pd.DataFrame({
         "Experimental Groups",
         "Total Genes",
         "P-value Threshold",
-        "Difference Threshold"
+        "Expression Difference Threshold"
     ],
     "Value": [
         "NCBI GEO",
@@ -215,7 +215,7 @@ Selection criteria:
 
 - P-value < 0.05
 - |Difference| > 0.5
-Genes satisfying both criteria were considered for downstream exploration.
+Genes meeting both thresholds were selected for downstream analysis.
 """)
 # -----------------------------
 # Volcano Plot
@@ -284,7 +284,7 @@ ax.axvline(-0.5, linestyle="--", color="steelblue")
 ax.axvline(0.5, linestyle="--", color="steelblue")
 ax.axhline(-np.log10(0.05), linestyle="--", color="darkgreen")
 
-ax.set_xlabel("Difference")
+ax.set_xlabel("Expression Difference (Mut vs WT)")
 ax.set_ylabel("-log10(P-value)")
 ax.set_title("Volcano Plot of Differential Gene Expression")
 
