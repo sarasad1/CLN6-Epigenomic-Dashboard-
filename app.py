@@ -211,7 +211,7 @@ with col1:
 
 with col2:
     significant = (
-        (cln6_data["FDR"] < 0.05) &
+        (cln6_data["P_value"] < 0.05) &
         (cln6_data["Difference"].abs() > 0.5)
     ).sum()
 
