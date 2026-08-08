@@ -202,7 +202,11 @@ with col1:
     st.metric("Total Genes", f"{len(cln6_data):,}")
 
 with col2:
-    significant = (cln6_data["P_value"] < 0.05).sum()
+    significant = (
+        (cln6_data["P_value"] < 0.05) &
+        (cln6_data["Difference"].abs() > 0.5)
+    ).sum()
+
     st.metric("Significant Genes", f"{significant:,}")
 
 with col3:
