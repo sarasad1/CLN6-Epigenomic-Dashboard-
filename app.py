@@ -41,11 +41,12 @@ using Python and Streamlit.
 try:
     cln6_data = pd.read_csv("CLN6_dashboard_data.csv")
 
-# Multiple testing correction using Benjamini-Hochberg FDR
-cln6_data["FDR"] = multipletests(
-    cln6_data["P_value"],
-    method="fdr_bh"
-)[1]
+    # Multiple testing correction using Benjamini-Hochberg FDR
+    cln6_data["FDR"] = multipletests(
+        cln6_data["P_value"],
+        method="fdr_bh"
+    )[1]
+
 except FileNotFoundError:
     st.error("Dataset not found. Please upload CLN6_dashboard_data.csv")
     st.stop()
